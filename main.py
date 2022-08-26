@@ -25,16 +25,23 @@ while is_on == True:
   if choice == "off":
       is_on = False
   elif choice == "report":
+    print ("\n")
     coffee_mach.report()
     money.report()
+    print ("\n")
   elif choice in list:
     drink = menu.find_drink(choice)
     
-    if coffee_mach.is_resource_sufficient(drink) is True:  
+    if coffee_mach.is_resource_sufficient(drink) is True: 
+      print ("\n")
       print (f"That will cost: ${drink.cost}")
+      print ("\n")
       if money.make_payment(drink.cost) == True:
+        print ("\n")
         coffee_mach.make_coffee(drink)
+        print ("\n")
   else:
+    print ("\n")
     print ("That't not a valid choice \n")
 
 
